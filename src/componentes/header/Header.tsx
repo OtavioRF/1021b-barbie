@@ -1,22 +1,20 @@
 import './Header.css'
-function Header(){
-    return(
-        <header>
-           <div>
-            logo
-           </div>
-           <nav>
-            <ul>
-                
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Notícias</a></li>
-                <li><a href="#">Contato</a></li>
-
-            </ul>
-           </nav>
-        </header>
-    )
-}
-
-export default Header
+import teste from "../../assets/barbie-logo.png"
+export default function Header(){
+  return(
+     <header>
+       
+  <nav className="navbar">
+  <img src={teste} alt="logo" />
+   <ul className="botoes">
+     
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Noticia</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+            
+  </ul>
+      </nav>
+    </header>
+  )
+};
