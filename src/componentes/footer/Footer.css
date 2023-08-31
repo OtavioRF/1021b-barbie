@@ -1,12 +1,12 @@
 footer{
     background-color:#ff80d0;
     font-family:Arial;
-    width: 100vw;
+    max-width: 100%;
   }
   
   img{
     width:25px;
-    margin-left:20px;
+
   }
   
   .container{
