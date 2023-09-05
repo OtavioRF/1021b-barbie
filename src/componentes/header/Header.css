@@ -10,7 +10,7 @@ header{
     list-style:none;
     display:flex;
     margin-top:2%;
-    margin-left:60%;
+    margin-left:50%;
   }
   .botoes a{
     text-decoration:none;
@@ -30,3 +30,7 @@ header{
     width:200px;
   }
   
+  .barrapesquisa{
+    height: 30px;
+    border: 1px solid #f0f0f0;
+  }

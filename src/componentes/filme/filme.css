@@ -1,12 +1,17 @@
 .filme_container{
-    width: 300px;
     padding: 50px;
     box-shadow: 0px 0px 5px 1px #ff80d0;
     border-radius: 30px;
     font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
-.filme_container img{
+.foto-filme{
+    min-height: 350px;
+    display:flex;
+    align-items: center;
+}
+.foto-filme>img{
     width: 100%;
 }
 
