@@ -21,16 +21,12 @@ header{
   
   .botoes a:hover{
     color:#811797
-  
+    
   }
   .botoes li{
-    margin-left: 25px
+    margin-left: 75px
   }
   .navbar img{
     width:200px;
   }
   
-  .barrapesquisa{
-    height: 30px;
-    border: 1px solid #f0f0f0;
-  }
