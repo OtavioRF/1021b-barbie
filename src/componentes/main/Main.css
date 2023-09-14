@@ -22,3 +22,10 @@
 .pesquisa{
     padding: 50px;
 }
+
+.pesquisa img{
+    min-height: 350px;
+    display:flex;
+    align-items: center;
+  
+}
