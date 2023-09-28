@@ -1,13 +1,13 @@
 .filme_container{
     padding: 50px;
-    box-shadow: 0px 0px 5px 1px #ff80d0;
-    border-radius: 30px;
+    box-shadow: 0px 0px 9px 3px #ff80d0;
+    border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
 }
 
 .foto-filme{
-    min-height: 350px;
+    min-height: 200px;
     display:flex;
     align-items: center;
 }
@@ -22,3 +22,5 @@
 .filme_container h1{
     text-align: center;
 }
+
+

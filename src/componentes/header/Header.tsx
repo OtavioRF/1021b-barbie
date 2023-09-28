@@ -1,4 +1,5 @@
 import './Header.css'
+import { Link } from 'react-router-dom'
 import teste from "../../assets/barbie-logo.png"
 
 export default function Header(){
@@ -7,13 +8,14 @@ export default function Header(){
      <header>
        
   <nav className="navbar">
-  <img src={teste} alt="logo" />
+  <Link to="/"><img src={teste} alt="logo" /></Link>
+  
   
    <ul className="botoes">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Noticia</a></li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Contato</a></li>
+      <li><Link to="/">Home</Link></li>
+      <li><Link to="/noticia">Noticia</Link></li>
+      <li><Link to="/sobre">Sobre</Link></li>
+      <li><Link to="/contato">Contato</Link></li>
             
   </ul>
       </nav>
