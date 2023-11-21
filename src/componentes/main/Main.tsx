@@ -1,57 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Filme from "../filme/filme.tsx";
+import axios from 'axios';
 import './Main.css';
 
 type FilmesType = {
   id: number;
   titulo: string;
-  sinopse: string;
+  descricao: string;
   imagem: string;
 };
 
+//
+const URL_API = "http://localhost:3000/filmes"; // Substitua pela URL real da sua API
+
 export default function Main() {
   const [texto, setTexto] = useState("");
-  const filmes: FilmesType[] = [
-    {
-      id: 1,
-      titulo: "Barbie",
-      sinopse:
-        "Depois de ser expulsa da Barbieland por ser uma boneca de aparência menos do que perfeita, Barbie parte para o mundo humano em busca da verdadeira felicidade.",
-      imagem: "/barbie.png",
-    },
-    {
-      id: 2,
-      titulo: "Oppenheimer",
-      sinopse:
-        "O físico J. Robert Oppenheimer trabalha com uma equipe de cientistas durante o Projeto Manhattan, levando ao desenvolvimento da bomba atômica.",
-      imagem: "/opp.jpg",
-    },
-    {
-      id: 3,
-      titulo: "Bullet-Train",
-      sinopse:
-        "Em um trem-bala indo rapidamente de Tóquio a Morioka, cinco assassinos profissionais descobrem que possuem o mesmo objetivo.",
-      imagem: "/bulet train.jpg",
-    },
-    {
-      id: 4,
-      titulo: "Barbie sereia",
-      sinopse: "Uma sereia estilista tem o poder de mudar a cor de pérolas preciosas.",
-      imagem: "/bsereia.jpg",
-    },
-  ];
+  const [filmes, setFilmes] = useState<FilmesType[]>([]);
+
+  useEffect(() => {
+    const buscarFilmes = async () => {
+      try {
+        const resposta = await axios.get<FilmesType[]>(URL_API);
+        setFilmes(resposta.data);
+      } catch (error) {
+        console.log('Erro ao buscar os dados:');
+      }
+    };
+
+    buscarFilmes();
+  }, []);
+//
 
   function muda_txt(e: React.ChangeEvent<HTMLInputElement>) {
     setTexto(e.target.value);
   }
 
+  
   return (
     <>
       <div className="pesquisa">
         <p>Buscar Filme</p>
         <input className="barrapesquisa" type="text" onChange={muda_txt}></input>
         <div>
-          <p className="txt_digitado">pesquisa: {texto}</p>
+          <p className="txt_digitado">Pesquisa: {texto}</p>
         </div>
       </div>
 
@@ -63,7 +54,7 @@ export default function Main() {
           .map((filme) => (
             <Filme
               key={filme.id}
-              sinopse={filme.sinopse}
+              descricao={filme.descricao}
               titulo={filme.titulo}
               imagem={filme.imagem}
             />
