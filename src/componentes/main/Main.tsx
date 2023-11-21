@@ -11,7 +11,7 @@ type FilmesType = {
 };
 
 //
-const URL_API = "http://localhost:3000/filmes"; // Substitua pela URL real da sua API
+const URL_API = "http://localhost:3000/filmes"; 
 
 export default function Main() {
   const [texto, setTexto] = useState("");
